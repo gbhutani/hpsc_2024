@@ -19,3 +19,8 @@ def sqrt2(x, debug=False):
 		print(f"Finally, the value of s={s:20.15f}")
 	return s
 	
+if __name__=="__main__":
+	import test_case
+	print("In main, executing test_1() in test_case.py")
+	test_case.test_1()
+	
