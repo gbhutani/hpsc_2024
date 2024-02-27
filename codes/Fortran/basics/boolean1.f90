@@ -1,3 +1,5 @@
+! $UWHPSC/codes/fortran/boolean1.f90
+
 program boolean1
 
     implicit none

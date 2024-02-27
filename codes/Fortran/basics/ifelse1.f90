@@ -1,3 +1,5 @@
+! $UWHPSC/codes/fortran/ifelse1.f90
+
 program ifelse1
 
     implicit none
