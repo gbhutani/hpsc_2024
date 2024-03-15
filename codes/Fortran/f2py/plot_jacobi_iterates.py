@@ -21,24 +21,21 @@ u = np.linspace(alpha, beta, n)
 f = 100. * np.exp(x)
 
 niters = 0
-plt.clf()
-plt.plot(x, u, 'o-')
-plt.title("After %s iterations" % niters)
-plt.ylim([10., 80.])
+plt.ion()
+fig, ax = plt.subplots()
+line, = ax.plot(x, u, 'o-')
+ax.set_title("After %s iterations" % niters)
+ax.set_ylim([10., 80.])
 
-ans = raw_input("Type return to start... ")
+ans = input("Type return to start... ")
 
 iters_per_plot = 200   # number of iterations between plots
 nplots = 20            # number of plots to produce
 
 for nn in range(nplots):
     u = jacobi1.iterate(u, iters_per_plot, f)
-    plt.plot(x, u, 'o-')
+    line.set_ydata(u)
     niters = niters + iters_per_plot
-    plt.title("After %s iterations" % niters)
-    plt.ylim([10., 80.])
+    ax.set_title("After %s iterations" % niters)
     plt.draw()
-    time.sleep(.5)
-    
-
-
+    plt.pause(0.5)  # Pause to allow the plot to update
