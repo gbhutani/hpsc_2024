@@ -11,11 +11,10 @@ program test
   
    print *, "Testing openmp, you should see each thread print..."
 
-   !$omp parallel 
-   !$omp critical
+   !$omp parallel private(thread_num)
    !$ thread_num = omp_get_thread_num()    ! unique for each thread
    !$ print *, "This thread = ",thread_num ! each thread prints
-   !$omp end critical
+   
    !$omp end parallel 
 
 end program test
